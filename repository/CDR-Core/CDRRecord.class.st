@@ -39,7 +39,7 @@ CDRRecord >> content [
 CDRRecord >> created [
 	self
 		at: 'state' put: 'created';
-		at: 'createdTime' put: DateAndTime now.
+		at: 'createdTime' put: DateAndTime now asUnixTime.
 	backend recordCreated: self.
 ]
 
