@@ -7,7 +7,7 @@ Class {
 { #category : #'as yet unclassified' }
 CDRHLRClient >> sendRoutingInfo: aMSISDN crn: aCrn dialogue: aDialogue [
 	| record |
-	record := (self addRecordFor: aDialogue)
+	record := (self createRecordFor: aDialogue)
 				at: 'type' put: 'start';
 				at: 'operation' put: 'sendRoutingInfo';
 				at: 'msisdn' put: aMSISDN;
@@ -23,7 +23,7 @@ CDRHLRClient >> sendRoutingInfo: aMSISDN crn: aCrn dialogue: aDialogue [
 { #category : #'as yet unclassified' }
 CDRHLRClient >> sendRoutingInfo: aString smscAddr: aSmsc dialogue: aDialogue [
 	| record |
-	record := (self addRecordFor: aDialogue)
+	record := (self createRecordFor: aDialogue)
 				at: 'type' put: 'start';
 				at: 'operation' put: 'sendRoutingInfoSM';
 				at: 'smsc' put: aSmsc;
@@ -36,7 +36,7 @@ CDRHLRClient >> sendRoutingInfo: aString smscAddr: aSmsc dialogue: aDialogue [
 { #category : #'as yet unclassified' }
 CDRHLRClient >> updateGprsLocationRequest: aSGSNNumber imsi: anIMSI dialogue: aDialogue [
 	| record |
-	record := (self addRecordFor: aDialogue)
+	record := (self createRecordFor: aDialogue)
 				at: 'type' put: 'start';
 				at: 'operation' put: 'updateGprsLocation';
 				at: 'imsi' put: anIMSI;
@@ -50,7 +50,7 @@ CDRHLRClient >> updateGprsLocationRequest: aSGSNNumber imsi: anIMSI dialogue: aD
 { #category : #'as yet unclassified' }
 CDRHLRClient >> updateLocationRequest: aVLRGT msc: aMSCGT imsi: anIMSI dialogue: aDialogue [
 	| record |
-	record := (self addRecordFor: aDialogue)
+	record := (self createRecordFor: aDialogue)
 				at: 'type' put: 'start';
 				at: 'operation' put: 'updateLocation';
 				at: 'imsi' put: anIMSI;

@@ -31,6 +31,11 @@ CDRRecord >> backend: aBackend [
 ]
 
 { #category : #'as yet unclassified' }
+CDRRecord >> content [
+	^dictionary
+]
+
+{ #category : #'as yet unclassified' }
 CDRRecord >> created [
 	self
 		at: 'state' put: 'created';

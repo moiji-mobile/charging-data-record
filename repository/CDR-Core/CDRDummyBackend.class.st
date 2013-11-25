@@ -20,5 +20,4 @@ CDRDummyBackend >> initialize [
 
 { #category : #'as yet unclassified' }
 CDRDummyBackend >> recordCreated: aRecord [
-	pendingRecords remove: aRecord.
 ]

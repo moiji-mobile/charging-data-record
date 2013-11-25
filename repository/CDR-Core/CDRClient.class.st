@@ -11,11 +11,11 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-CDRClient >> addRecordFor: aDialogue [ 
-	^self backend addRecordFor: aDialogue
+CDRClient >> backend [
+	self shouldBeImplemented.
 ]
 
 { #category : #'as yet unclassified' }
-CDRClient >> backend [
-	self shouldBeImplemented.
+CDRClient >> createRecordFor: aDialogue [ 
+	^self backend createRecordFor: aDialogue
 ]

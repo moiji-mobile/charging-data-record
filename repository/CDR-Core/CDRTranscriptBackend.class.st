@@ -21,7 +21,6 @@ CDRTranscriptBackend >> initialize [
 
 { #category : #'as yet unclassified' }
 CDRTranscriptBackend >> recordCreated: aRecord [
-	pendingRecords remove: aRecord.
 	Transcript
 		nextPutAll: ('CDR(<1s>) Time(<1p>)' expandMacrosWith: aRecord forCDR with: aRecord createdTime);
 		cr.
