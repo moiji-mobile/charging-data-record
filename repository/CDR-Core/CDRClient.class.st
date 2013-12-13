@@ -12,10 +12,21 @@ Class {
 
 { #category : #'as yet unclassified' }
 CDRClient >> backend [
-	self shouldBeImplemented.
+	^backend
+]
+
+{ #category : #'as yet unclassified' }
+CDRClient >> backend: aBackend [
+	backend := aBackend
 ]
 
 { #category : #'as yet unclassified' }
 CDRClient >> createRecordFor: aDialogue [ 
 	^self backend createRecordFor: aDialogue
+]
+
+{ #category : #'as yet unclassified' }
+CDRClient >> initialize [
+	super initialize.
+	backend := CDRDummyBackend new.
 ]
