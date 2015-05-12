@@ -303,11 +303,37 @@ ConfigurationOfCDR >> baseline01: spec [
 				group: 'default' with: #('CDR-Core' 'CDR-HTTP') ].
 ]
 
+{ #category : #baselines }
+ConfigurationOfCDR >> baseline1: spec [
+	<version: '1-baseline'>
+
+	spec for: #'common' do: [
+		spec blessing: #'baseline'.
+		spec repository: 'http://smalltalkhub.com/mc/osmocom/ChargingDataRecord/main'.
+		spec 
+			project: 'Phexample' with: [
+				spec
+					className: #ConfigurationOfPhexample;
+					versionString: '1.2';
+					repository: 'http://smalltalkhub.com/mc/Phexample/Phexample/main' ];
+			project: 'Neo JSON' with: [
+				spec
+					className: #ConfigurationOfNeoJSON;
+					versionString: #'stable';
+					repository: 'http://mc.stfx.eu/Neo' ].
+		spec 
+			package: 'CDR-Core';
+			package: 'CDR-HTTP' with: [
+				spec requires: #('CDR-Core' 'Neo JSON' ). ].
+		spec group: 'default' with: #('CDR-Core' 'CDR-HTTP' ). ].
+
+]
+
 { #category : #'as yet unclassified' }
 ConfigurationOfCDR >> development: spec [
 	<symbolicVersion: #'development'>
 
-	spec for: #'common' version: '0.22'.
+	spec for: #'common' version: '1-baseline'.
 
 ]
 
