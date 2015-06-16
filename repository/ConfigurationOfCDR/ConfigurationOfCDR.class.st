@@ -282,7 +282,7 @@ ConfigurationOfCDR >> baseline01: spec [
         
 	spec for: #common do: [
 		spec blessing: #baseline.
-                spec repository: 'http://smalltalkhub.com/mc/osmocom/Osmocom/main'.    
+                spec repository: 'http://smalltalkhub.com/mc/osmocom/ChargingDataRecord/main'.    
                 spec 
 				package: 'CDR-Core';
 				package: 'CDR-HTTP' with: [ spec requires: #('CDR-Core' 'Neo JSON' )].
